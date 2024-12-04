@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: flask-app-pod
+  labels:
+    app.kubernetes.io/name: flask-demo-app
+spec:
+  containers:
+  - name: flask-pod-container
+    image: flask_demo:latest
+    imagePullPolicy: Never
+    ports:
+    - containerPort: 5000
+      name: flask-demo-pod
